@@ -58,12 +58,12 @@ throwPlay.addEventListener('click', () => playHanged('tabla'));
 function playHanged(word){
     let finallyWord = '_'.repeat(word.length);
     let lives= 5;
+    let arrayFinallyWord = Array.from(finallyWord); 
     while(lives > 0 && finallyWord !== word){
         let letter= prompt('Adivina la letra: ');
         if(word.includes(letter)){
             for (let index = 0; index < word.length; index++) {
                 if(letter === word[index]){
-                    let arrayFinallyWord = Array.from(finallyWord);
                     arrayFinallyWord[index] = letter;
                     finallyWord = arrayFinallyWord.join(' ');
                 }
